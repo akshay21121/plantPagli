@@ -49,11 +49,7 @@ $storeEmail = $settingModel->get('store_email', 'care@plantpagli.com');
         <div class="container header-inner">
             <!-- Brand Logo -->
             <a href="<?= url('/') ?>" class="brand-logo" title="Plantpagli - For the love of plants">
-                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli Logo" class="brand-logo-img">
-                <div class="brand-logo-text-wrap">
-                    <span class="brand-logo-text">Plantpagli<span class="dot">.</span></span>
-                    <span class="brand-logo-tagline">For the love of plants 🌱</span>
-                </div>
+                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli - For the love of plants" class="brand-logo-img">
             </a>
 
             <!-- Search Bar -->
@@ -153,9 +149,8 @@ $storeEmail = $settingModel->get('store_email', 'care@plantpagli.com');
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="<?= url('/') ?>" class="brand-logo" style="color:#fff;margin-bottom:14px;text-decoration:none;">
-                        <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli Logo" class="brand-logo-img" style="border-color:#52b788;background:#fff;">
-                        <span>Plantpagli<span class="dot" style="color:var(--accent);">.</span></span>
+                    <a href="<?= url('/') ?>" class="brand-logo brand-logo-footer" title="Plantpagli - For the love of plants" style="margin-bottom:14px;text-decoration:none;">
+                        <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli - For the love of plants" class="brand-logo-img">
                     </a>
                     <p>India’s most trusted online nursery & gardening haven. We deliver healthy, nursery-grown live plants directly to your doorstep in specially ventilated transit packaging.</p>
                     <p style="font-size:13px;color:#a3b8ab;">

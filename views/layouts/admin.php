@@ -20,7 +20,7 @@ $currentUri = $_SERVER['REQUEST_URI'] ?? '';
         <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-brand">
-                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli Logo" style="height:38px; width:38px; border-radius:50%; object-fit:cover; border:2px solid var(--accent); background:#fff; flex-shrink:0;">
+                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli Logo" style="height:42px; width:42px; border-radius:8px; object-fit:contain; border:1.5px solid rgba(16,185,129,0.3); background:#fff; flex-shrink:0;">
                 <span>Plantpagli Admin</span>
             </div>
 
