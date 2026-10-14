@@ -1,0 +1,23 @@
+# Environment files
+.env
+
+# Composer & dependencies
+/vendor/
+
+# Temporary and upload files
+/public/uploads/temp/*
+!/public/uploads/products/
+!/public/uploads/banners/
+
+# Logs and cache
+*.log
+/storage/logs/
+/storage/cache/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.bak

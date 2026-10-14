@@ -1,0 +1,58 @@
+# PlantPuglu Nginx VirtualHost Configuration
+# Place in /etc/nginx/sites-available/plantpuglu and symlink to /etc/nginx/sites-enabled/
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name plantpagli.com www.plantpagli.com;
+    
+    # Path to the public directory
+    root /var/www/plantpagli/public;
+    index index.php index.html;
+
+    charset utf-8;
+
+    # Security Headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # Gzip Compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml application/json;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # Static assets caching
+    location ~* \.(jpg|jpeg|png|gif|ico|css|js|webp|svg|woff|woff2|ttf)$ {
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    # Block access to hidden files (.env, .git)
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+
+    # Block access to sensitive upload script executions
+    location ~* /uploads/.*\.(php|phps|phtml|sh|py)$ {
+        deny all;
+    }
+
+    # PHP FastCGI execution
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+        # For PHP 8.3: fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    client_max_body_size 10M;
+}

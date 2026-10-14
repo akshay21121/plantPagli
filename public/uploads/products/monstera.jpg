@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <rect width="100%" height="100%" fill="#f5efe6" />
+  <circle cx="250" cy="230" r="160" fill="#ede5d5" />
+  <!-- Pot -->
+  <path d="M170 310 L190 410 C190 416 196 420 204 420 L296 420 C304 420 310 416 310 410 L330 310 Z" fill="#1b4332" />
+  <rect x="160" y="300" width="180" height="16" rx="8" fill="#1b4332" opacity="0.8" />
+  <!-- Foliage -->
+  <path d="M250 300 Q235 170 140 130 Q200 120 250 230 Q300 120 360 130 Q265 170 250 300 Z" fill="#0f271d" />
+  <path d="M250 230 Q240 110 180 70 Q230 70 250 160 Q270 70 320 70 Q260 110 250 230 Z" fill="#52b788" />
+  <circle cx="250" cy="90" r="16" fill="#52b788" opacity="0.6" />
+  <!-- Badge and Label -->
+  <rect x="40" y="25" width="200" height="28" rx="14" fill="#1b4332" />
+  <text x="140" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#d8f3dc" letter-spacing="0.5">SWISS CHEESE SPLITS</text>
+  <text x="250" y="460" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="20" font-weight="bold" fill="#1b4332">Monstera Deliciosa</text>
+  <text x="250" y="482" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#7a897b">PlantPuglu Nursery Certified</text>
+</svg>

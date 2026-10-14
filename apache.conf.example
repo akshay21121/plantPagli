@@ -1,0 +1,27 @@
+# PlantPuglu Apache VirtualHost Configuration
+# Place in /etc/apache2/sites-available/plantpuglu.conf and run `a2ensite plantpuglu.conf`
+
+<VirtualHost *:80>
+    ServerName plantpagli.com
+    ServerAlias www.plantpagli.com
+    ServerAdmin care@plantpagli.com
+
+    DocumentRoot /var/www/plantpagli/public
+
+    <Directory /var/www/plantpagli/public>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # Deny direct access to parent directories
+    <Directory /var/www/plantpagli>
+        Require all denied
+    </Directory>
+    <Directory /var/www/plantpagli/public>
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/plantpuglu_error.log
+    CustomLog ${APACHE_LOG_DIR}/plantpuglu_access.log combined
+</VirtualHost>
