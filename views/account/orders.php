@@ -55,7 +55,7 @@
                                     <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
                                         <div style="display: flex; align-items: center; gap: 10px;">
                                             <div style="width: 44px; height: 44px; background: #f4efe4; border-radius: 6px; padding: 4px;">
-                                                <img src="<?= uploadUrl('products/' . ($item['product_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($item['product_name']) ?>" style="width:100%;height:100%;object-fit:contain;">
+                                                <img src="<?= productImage($item['product_image'] ?? '') ?>" alt="<?= e($item['product_name']) ?>" style="width:100%;height:100%;object-fit:contain;" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                                             </div>
                                             <div>
                                                 <strong><?= e($item['product_name']) ?></strong>

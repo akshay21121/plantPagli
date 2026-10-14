@@ -48,8 +48,12 @@ $storeEmail = $settingModel->get('store_email', 'care@plantpagli.com');
     <header class="main-header">
         <div class="container header-inner">
             <!-- Brand Logo -->
-            <a href="<?= url('/') ?>" class="brand-logo" title="Plantpagli - For the love of plants">
-                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli - For the love of plants" class="brand-logo-img">
+            <a href="<?= url('/') ?>" class="brand-logo" title="PlantPagli - For the love of plants">
+                <img src="<?= asset('images/logo.png') ?>" alt="PlantPagli Logo" class="brand-logo-img">
+                <div class="brand-logo-text-wrap">
+                    <span class="brand-logo-text">PlantPagli<span class="dot">.</span></span>
+                    <span class="brand-logo-tagline">For the love of plants 🌱</span>
+                </div>
             </a>
 
             <!-- Search Bar -->
@@ -149,8 +153,12 @@ $storeEmail = $settingModel->get('store_email', 'care@plantpagli.com');
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="<?= url('/') ?>" class="brand-logo brand-logo-footer" title="Plantpagli - For the love of plants" style="margin-bottom:14px;text-decoration:none;">
-                        <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli - For the love of plants" class="brand-logo-img">
+                    <a href="<?= url('/') ?>" class="brand-logo brand-logo-footer" title="PlantPagli - For the love of plants" style="margin-bottom:14px;text-decoration:none;display:inline-flex;align-items:center;gap:12px;">
+                        <img src="<?= asset('images/logo.png') ?>" alt="PlantPagli Logo" class="brand-logo-img" style="height:62px;width:auto;border-radius:12px;border-color:#52b788;background:#fff;">
+                        <div class="brand-logo-text-wrap">
+                            <span class="brand-logo-text" style="color:#ffffff;">PlantPagli<span class="dot" style="color:var(--accent);">.</span></span>
+                            <span class="brand-logo-tagline" style="color:#a7f3d0;">For the love of plants 🌱</span>
+                        </div>
                     </a>
                     <p>India’s most trusted online nursery & gardening haven. We deliver healthy, nursery-grown live plants directly to your doorstep in specially ventilated transit packaging.</p>
                     <p style="font-size:13px;color:#a3b8ab;">

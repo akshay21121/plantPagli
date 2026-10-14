@@ -153,7 +153,7 @@
                                 <?php foreach ($product['images'] as $img): ?>
                                     <div style="border: 1px solid <?= !empty($img['is_primary']) ? 'var(--primary)' : 'var(--border)' ?>; border-radius: 8px; padding: 6px; background: #fff; text-align: center; box-shadow: <?= !empty($img['is_primary']) ? '0 0 0 2px rgba(27,67,50,0.18)' : '0 1px 2px rgba(0,0,0,0.03)' ?>; display: flex; flex-direction: column; justify-content: space-between;">
                                         <div style="height: 85px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 6px; overflow: hidden; margin-bottom: 6px;">
-                                            <img src="<?= uploadUrl('products/' . $img['image_path']) ?>" alt="Photo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                            <img src="<?= productImage($img['image_path']) ?>" alt="Photo" style="max-height: 100%; max-width: 100%; object-fit: contain;" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                                         </div>
                                         
                                         <div style="display: flex; flex-direction: column; gap: 4px;">

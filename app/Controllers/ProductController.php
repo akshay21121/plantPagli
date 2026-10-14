@@ -69,7 +69,7 @@ class ProductController extends Controller {
         }
 
         $relatedProducts = $productModel->getRelated((int)$product['category_id'], (int)$product['id'], 4);
-        $reviews = $reviewModel->getByProduct((int)$product['product_id'] ?? (int)$product['id']);
+        $reviews = $reviewModel->getByProduct((int)($product['product_id'] ?? $product['id']));
 
         $this->render('products/show', [
             'title' => $product['name'] . ' | Buy Online India',

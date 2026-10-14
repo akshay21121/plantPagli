@@ -74,7 +74,7 @@
                             <tr>
                                 <td>
                                     <div style="width: 44px; height: 44px; background: #f4efe4; border-radius: 6px; padding: 4px;">
-                                        <img src="<?= uploadUrl('products/' . ($p['primary_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($p['name']) ?>" style="width:100%;height:100%;object-fit:contain;">
+                                        <img src="<?= productImage($p['primary_image'] ?? '') ?>" alt="<?= e($p['name']) ?>" style="width:100%;height:100%;object-fit:contain;" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                                     </div>
                                 </td>
                                 <td>

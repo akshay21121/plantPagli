@@ -126,7 +126,7 @@ img {
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   transition: var(--transition);
   flex-shrink: 0;
@@ -137,26 +137,27 @@ img {
 }
 
 .brand-logo-img {
-  height: 64px;
+  height: 74px;
   width: auto;
-  max-width: 170px;
-  border-radius: var(--radius-sm);
+  max-width: 82px;
+  border-radius: 14px;
   object-fit: contain;
   background: #ffffff;
   border: 1.5px solid var(--cream-border);
-  box-shadow: 0 3px 12px rgba(18, 60, 40, 0.08);
+  box-shadow: 0 4px 14px rgba(18, 60, 40, 0.09);
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, border-color 0.25s ease;
   display: block;
+  flex-shrink: 0;
 }
 
 .brand-logo:hover .brand-logo-img {
-  transform: scale(1.04);
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+  transform: scale(1.05) rotate(0.5deg);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.28);
   border-color: var(--accent);
 }
 
 .brand-logo-footer .brand-logo-img {
-  height: 68px;
+  height: 64px;
   background: #ffffff;
   border-color: #52b788;
 }
@@ -169,29 +170,33 @@ img {
 
 .brand-logo-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 800;
   color: var(--primary);
   letter-spacing: -0.6px;
   display: inline-flex;
   align-items: baseline;
+  transition: color 0.2s ease;
+}
+
+.brand-logo:hover .brand-logo-text {
+  color: var(--primary-dark);
 }
 
 .brand-logo-text .dot {
   color: var(--accent);
-  font-size: 30px;
+  font-size: 32px;
   line-height: 0;
-  margin-left: 1px;
+  margin-left: 2px;
 }
 
 .brand-logo-tagline {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  margin-top: 1px;
 }
 
 /* Search Bar */
@@ -1409,7 +1414,8 @@ textarea:focus {
   .form-row, .form-row-3 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-  .brand-logo-img { height: 48px; width: auto; max-width: 120px; }
+  .brand-logo { gap: 10px; }
+  .brand-logo-img { height: 52px; width: auto; max-width: 58px; border-radius: 10px; }
   .brand-logo-text { font-size: 21px; }
   .brand-logo-tagline { display: none; }
   .cat-nav-arrow { width: 26px; height: 26px; font-size: 11px; }

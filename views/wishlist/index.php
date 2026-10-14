@@ -29,7 +29,7 @@
                     </form>
 
                     <a href="<?= url('/product/' . e($prod['slug'])) ?>" class="product-thumb">
-                        <img src="<?= uploadUrl('products/' . ($prod['primary_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($prod['name']) ?>" loading="lazy">
+                        <img src="<?= productImage($prod['primary_image'] ?? '') ?>" alt="<?= e($prod['name']) ?>" loading="lazy" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                     </a>
 
                     <div class="product-info">

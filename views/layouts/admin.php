@@ -20,8 +20,11 @@ $currentUri = $_SERVER['REQUEST_URI'] ?? '';
         <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-brand">
-                <img src="<?= asset('images/logo.png') ?>" alt="Plantpagli Logo" style="height:42px; width:42px; border-radius:8px; object-fit:contain; border:1.5px solid rgba(16,185,129,0.3); background:#fff; flex-shrink:0;">
-                <span>Plantpagli Admin</span>
+                <img src="<?= asset('images/logo.png') ?>" alt="PlantPagli Logo" style="height:48px; width:auto; max-width:54px; border-radius:10px; object-fit:contain; border:1.5px solid rgba(16,185,129,0.3); background:#fff; flex-shrink:0;">
+                <div style="display:flex; flex-direction:column; line-height:1.2;">
+                    <span style="font-weight:800; font-size:17px; color:#ffffff; font-family:'Outfit',sans-serif;">PlantPagli<span style="color:var(--accent);">.</span></span>
+                    <span style="font-size:10px; color:var(--text-light); text-transform:uppercase; letter-spacing:0.8px;">Admin Console</span>
+                </div>
             </div>
 
             <ul class="sidebar-nav">

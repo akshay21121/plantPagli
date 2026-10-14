@@ -21,14 +21,14 @@
         <!-- Gallery Column -->
         <div class="detail-gallery">
             <div class="main-image-frame">
-                <img id="main-product-image" src="<?= uploadUrl('products/' . ($product['primary_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($product['name']) ?>">
+                <img id="main-product-image" src="<?= productImage($product['primary_image'] ?? '') ?>" alt="<?= e($product['name']) ?>" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
             </div>
 
             <?php if (!empty($product['images']) && count($product['images']) > 1): ?>
                 <div class="thumbs-row">
                     <?php foreach ($product['images'] as $idx => $img): ?>
-                        <div class="thumb-item <?= ($idx === 0) ? 'active' : '' ?>" data-full-image="<?= uploadUrl('products/' . $img['image_path']) ?>">
-                            <img src="<?= uploadUrl('products/' . $img['image_path']) ?>" alt="View <?= $idx + 1 ?>">
+                        <div class="thumb-item <?= ($idx === 0) ? 'active' : '' ?>" data-full-image="<?= productImage($img['image_path']) ?>">
+                            <img src="<?= productImage($img['image_path']) ?>" alt="View <?= $idx + 1 ?>" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -267,7 +267,7 @@
                 <?php foreach ($relatedProducts as $rel): ?>
                     <div class="product-card">
                         <a href="<?= url('/product/' . e($rel['slug'])) ?>" class="product-thumb">
-                            <img src="<?= uploadUrl('products/' . ($rel['primary_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($rel['name']) ?>" loading="lazy">
+                            <img src="<?= productImage($rel['primary_image'] ?? '') ?>" alt="<?= e($rel['name']) ?>" loading="lazy" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                         </a>
 
                         <div class="product-info">

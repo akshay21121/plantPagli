@@ -48,7 +48,7 @@
                                 <td>
                                     <div class="cart-prod-cell">
                                         <div class="cart-prod-thumb">
-                                            <img src="<?= uploadUrl('products/' . ($item['product_image'] ?? 'plant-placeholder.svg')) ?>" alt="<?= e($item['product_name']) ?>">
+                                            <img src="<?= productImage($item['product_image'] ?? '') ?>" alt="<?= e($item['product_name']) ?>" onerror="this.onerror=null;this.src='<?= asset('images/plant-placeholder.svg') ?>'">
                                         </div>
                                         <div>
                                             <a href="<?= url('/product/' . e($item['product_slug'])) ?>" style="font-weight: 700; font-size: 14.5px;">

@@ -50,19 +50,48 @@ if (!function_exists('url')) {
 
 if (!function_exists('asset')) {
     function asset(string $path): string {
-        return url('assets/' . ltrim($path, '/'));
+        $clean = ltrim($path, '/');
+        // If file exists directly in public/ (e.g. logo.png or favicon.ico)
+        if (file_exists(dirname(__DIR__) . '/public/' . $clean)) {
+            return url($clean);
+        }
+        return url('assets/' . $clean);
     }
 }
 
 if (!function_exists('uploadUrl')) {
-    function uploadUrl(string $path): string {
-        if (empty($path)) {
-            return asset('images/plant-placeholder.svg');
+    function uploadUrl(?string $path): string {
+        $placeholder = url('assets/images/plant-placeholder.svg');
+        if (empty($path) || $path === 'plant-placeholder.svg' || $path === 'products/plant-placeholder.svg') {
+            return $placeholder;
         }
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;
         }
-        return url('uploads/' . ltrim($path, '/'));
+        $clean = ltrim($path, '/');
+        if (str_starts_with($clean, 'uploads/')) {
+            $clean = substr($clean, 8);
+        }
+        if (str_starts_with($clean, 'products/products/')) {
+            $clean = substr($clean, 9);
+        }
+        return url('uploads/' . $clean);
+    }
+}
+
+if (!function_exists('productImage')) {
+    function productImage(?string $path): string {
+        if (empty($path) || $path === 'plant-placeholder.svg' || $path === 'products/plant-placeholder.svg') {
+            return url('assets/images/plant-placeholder.svg');
+        }
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+        $clean = ltrim($path, '/');
+        if (str_starts_with($clean, 'products/')) {
+            return uploadUrl($clean);
+        }
+        return uploadUrl('products/' . $clean);
     }
 }
 
